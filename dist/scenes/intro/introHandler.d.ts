@@ -1,0 +1,12 @@
+import AIOWizardContext from "./introWizardContext.js";
+declare function start(ctx: AIOWizardContext): Promise<void>;
+declare function handleFullName(ctx: AIOWizardContext): Promise<void>;
+declare function handleLocation(ctx: AIOWizardContext): Promise<void>;
+declare function handleAge(ctx: AIOWizardContext): Promise<void>;
+declare function handleProfession(ctx: AIOWizardContext): Promise<void>;
+declare function handleStudy(ctx: AIOWizardContext): Promise<void>;
+declare function handleBio(ctx: AIOWizardContext): Promise<void>;
+declare function handleBgImg(ctx: AIOWizardContext): Promise<void>;
+declare function handleMainImg(ctx: AIOWizardContext): Promise<void>;
+export { start, handleFullName, handleLocation, handleAge, handleProfession, handleStudy, handleBio, handleBgImg, handleMainImg, };
+export declare const getUrlFromFileId: (fileId: string) => Promise<string>;
