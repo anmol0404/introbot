@@ -63,10 +63,10 @@ export async function createThumbnail(
 
     // User ID Box
     const canvasHeight = ctx.canvas.height;
-    const boxX = 25; // Box X Position
-    const boxY = canvasHeight - 120; // Box Y Position
+    const boxX = 25;
+    const boxY = canvasHeight - 120;
     const boxWidth = 280;
-    const boxHeight = 90; // Increased height to fit both Username & ID
+    const boxHeight = 90;
 
     drawRoundedRect(ctx, boxX, boxY, boxWidth, boxHeight, 22, "rgba(0, 0, 0, 0.2)");
 
@@ -76,23 +76,21 @@ export async function createThumbnail(
     ctx.strokeStyle = "#333333";
     ctx.lineWidth = 2;
 
-    // Username Text (Above ID)
-    const usernameText = `Username: ${username}`;
-    const usernameTextWidth = ctx.measureText(usernameText).width;
-    const usernameTextX = boxX + boxWidth / 2 - usernameTextWidth / 2;
-    const usernameTextY = boxY + 35; // Adjust position
-
-    // ID Text (Below Username)
     const idText = `ID: ${userId}`;
     const idTextWidth = ctx.measureText(idText).width;
     const idTextX = boxX + boxWidth / 2 - idTextWidth / 2;
-    const idTextY = usernameTextY + 30; // Adjust position below Username
+    const idTextY = boxY + 35;
+
+    const usernameText = `Username: ${username}`;
+    const usernameTextWidth = ctx.measureText(usernameText).width;
+    const usernameTextX = boxX + boxWidth / 2 - usernameTextWidth / 2;
+    const usernameTextY = idTextY + 30;
 
     // Draw Texts
-    ctx.strokeText(usernameText, usernameTextX, usernameTextY);
-    ctx.fillText(usernameText, usernameTextX, usernameTextY);
     ctx.strokeText(idText, idTextX, idTextY);
     ctx.fillText(idText, idTextX, idTextY);
+    ctx.strokeText(usernameText, usernameTextX, usernameTextY);
+    ctx.fillText(usernameText, usernameTextX, usernameTextY);
 
     // User Details Box
     const canvasWidth = ctx.canvas.width;
@@ -123,7 +121,7 @@ export async function createThumbnail(
     );
 
     // Full Name
-    ctx.font = "bold 36px 'Lucida Console', monospace";
+    // ctx.font = "bold 36px 'Lucida Console', monospace";
     ctx.fillStyle = "white";
     ctx.strokeStyle = "green";
     ctx.lineWidth = 4;

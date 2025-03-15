@@ -8,5 +8,9 @@ export default async function startHandler(ctx: CommandContext) {
   } catch (error) {
     console.error("Error saving user data:", error);
   }
-  await ctx.reply("hello " + ctx.from?.first_name + " /setmyintro");
+  await ctx.reply(
+    "Hello " +
+      ctx.from?.first_name +
+      "!\nUse /addmyintro to add your intro.\nUse /deletemyintro to delete your intro."
+  );
 }

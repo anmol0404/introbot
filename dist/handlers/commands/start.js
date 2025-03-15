@@ -8,5 +8,7 @@ export default async function startHandler(ctx) {
     catch (error) {
         console.error("Error saving user data:", error);
     }
-    await ctx.reply("hello " + ((_b = ctx.from) === null || _b === void 0 ? void 0 : _b.first_name) + " /setmyintro");
+    await ctx.reply("Hello " +
+        ((_b = ctx.from) === null || _b === void 0 ? void 0 : _b.first_name) +
+        "!\nUse /addmyintro to add your intro.\nUse /deletemyintro to delete your intro.");
 }
